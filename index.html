@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công cụ tính điểm iuh</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Link css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link logo nên vào favicon để tạo logo -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/site.webmanifest">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="assets/img/logo.png" alt="Avatar Logo" style="width:80px;" class="rounded-circle"> 
+            </a>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#select">Tính điểm</a>
+                    </li>
+                   
+        
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h1 class="text-center mt-5 pt-5">
+        Công cụ tính điểm IUH
+    </h1>
+    <select name="" id="select" onchange="toggle()">
+        <option value="diemTBMH">Điểm trung bình môn học</option>
+        <option value="diemTBHK">Điểm trung bình học kì</option>
+        <option value="diemTBTL">Điểm trung bình tích lũy</option>
+    </select>
+    <div id="TBMH">
+        <div class="d-flex justify-content-center pt-5">
+            <table class="w-75">
+                <tr>
+                    <th rowspan="2">Số tín chỉ <span class="text-danger">(*)</span></th>
+                    <th rowspan="2">Giữa kì<span class="text-danger">(*)</span></th>
+                    <th colspan="9">Thường xuyên<span class="text-danger">(*) ít nhất 1 cột</span></th>
+                    <th colspan="5">thực hành<span class="text-danger">(*) ít nhất 1 cột</span></th>
+                    <th rowspan="2">Cuối kì<span class="text-danger">(*)</span></th>
+                </tr>
+                <tr>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6</th>
+                    <th>7</th>
+                    <th>8</th>
+                    <th>9</th>
+                    <th>1</th>
+                    <th>2</th>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                </tr>
+                <tr>
+                    <td><input type="string" name="" id="tinChi" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="giuaKi" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx1" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx2" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx3" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx4" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx5" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx6" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx7" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx8" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="tx9" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="th1" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="th2" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="th3" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="th4" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="th5" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                    <td><input type="string" name="" id="cuoiKi" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="d-flex justify-content-center pt-3" style="gap: 20px;">
+            <button onclick="tinhDiem()">Tính điểm</button>
+            <button onclick="xoaTrang()">Xóa trắng</button>
+        </div>
+        <div id="result" class="d-flex flex-column p-2">
+            <h6 class="text-center">Kết quả</h6>
+            <p class="fw-bold" id="dtk">Điểm tổng kết:&nbsp;</p>
+            <p class="fw-bold" id="td4">Thang điểm 4:&nbsp;</p>
+            <p class="fw-bold" id="dc">Điểm chữ:&nbsp;</p>
+            <p class="fw-bold" id="xl">Xếp loại:&nbsp;</p>
+            <p class="fw-bold" id="dat">Đạt:&nbsp;</p>
+        </div>
+    </div>
+
+    <div id="TBHK">
+        <div class="d-flex justify-content-center pt-5">
+            <table id="table_HK" class="w-75">
+                <tr>
+                    <th>Số tín chỉ <span class="text-danger">(*)</span></th>
+                    <th>Điểm tb môn học hệ 10<span class="text-danger">(*)</span></th>
+                    <th>Điểm tb môn học hệ 4<span class="text-danger">(*)</span></th>
+                </tr>
+                <tr>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 tinChi"></td>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 he10"></td>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 he4"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="d-flex justify-content-center pt-3" style="gap: 20px;">
+            <button onclick="tinhDiemHK('tb10','tb4','xlhl','Điểm trung bình học kì hệ 10:&nbsp;','Điểm trung bình học kì hệ 4:&nbsp;','Xếp loại học lực học kì:&nbsp;','tinChi','he10','he4','history-area-HK')">Tính điểm</button>
+            <button id="btnAddColumn" onclick="addColumn('table_HK','tinChi','he10','he4')">Thêm cột</button>
+            <button onclick="xoaTrangHK('table_HK','tb10','tb4','xlhl','Điểm trung bình học kì hệ 10:&nbsp;','Điểm trung bình học kì hệ 4:&nbsp;','Xếp loại học lực học kì:&nbsp;','tinChi','he10','he4')">Xóa trắng</button>
+        </div>
+        <div id="result" class="d-flex flex-column p-2">
+            <h6 class="text-center">Kết quả</h6>
+            <p class="fw-bold" id="tb10">Điểm trung bình học kì hệ 10:&nbsp;</p>
+            <p class="fw-bold" id="tb4">Điểm trung bình học kì hệ 4:&nbsp;</p>
+            <p class="fw-bold" id="xlhl">Xếp loại học lực học kì:&nbsp;</p>
+            <!-- <p class="fw-bold" id="xl">Học bổng:&nbsp;</p> -->
+            <!-- Sau khi có thời gian rảnh update chức năng học bổng bằng datalist -->
+        </div>
+    </div>
+
+    <div id="TBTL">
+        <div class="d-flex justify-content-center pt-5">
+            <table id="table_TL" class="w-75">
+                <tr>
+                    <th>Số tín chỉ <span class="text-danger">(*)</span></th>
+                    <th>Điểm tb học kì hệ 10<span class="text-danger">(*)</span></th>
+                    <th>Điểm tb học kì hệ 4<span class="text-danger">(*)</span></th>
+                </tr>
+                <tr>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 tinChiTL"></td>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 he10TL"></td>
+                    <td><input type="string" name="" class="col-xl-12 col-md-12 col-lg-12 col-xxl-12 col-sm-12 col-xs-12 col-12 he4TL"></td>
+                </tr>
+            </table>
+        </div>
+        <div class="d-flex justify-content-center pt-3" style="gap: 20px;">
+            <button onclick="tinhDiemHK('tbtl10','tbtl4','xltl','Điểm trung bình tích lũy hệ 10:&nbsp;','Điểm trung bình tích lũy hệ 4:&nbsp;','Xếp loại học lực tích lũy:&nbsp;','tinChiTL','he10TL','he4TL','history-area-TL')">Tính điểm</button>
+            <button id="btnAddColumnTL" onclick="addColumn('table_TL','tinChiTL','he10TL','he4TL')">Thêm cột</button>
+            <button onclick="xoaTrangHK('table_TL','tbtl10','tbtl4','xltl','Điểm trung bình tích lũy hệ 10:&nbsp;','Điểm trung bình tích lũy hệ 4:&nbsp;','Xếp loại học lực tích lũy:&nbsp;','tinChiTL','he10TL','he4TL')">Xóa trắng</button>
+        </div>
+        <div id="result" class="d-flex flex-column p-2">
+            <h6 class="text-center">Kết quả</h6>
+            <p class="fw-bold" id="tbtl10">Điểm trung bình tích lũy hệ 10:&nbsp;</p>
+            <p class="fw-bold" id="tbtl4">Điểm trung bình tích lũy hệ 4:&nbsp;</p>
+            <p class="fw-bold" id="xltl">Xếp loại học lực tích lũy:&nbsp;</p>
+        </div>
+    </div>
+    
+    <div id="history-search" class="d-flex flex-column pt-3">
+        <h6>lịch sử tìm kiếm</h6>
+        <div id="tab" class="d-flex">
+            <div class="p-2 cursor tab-btn active" onclick="changeTab(this,'history-area','lưu ý:(số đầu là: số tín chỉ của 1 môn học, số thứ 2 là điểm tổng kết, số cuối là thang điểm 4)')">Môn học</div>
+            <div class="p-2 cursor tab-btn" onclick="changeTab(this,'history-area-HK','lưu ý:(số đầu là: số tín chỉ của 1 học kì, số thứ 2 là điểm trung bình học kì hệ 10, số cuối là điểm trung bình học kì hệ 4)')">Học kì</div>
+            <div class="p-2 cursor tab-btn" onclick="changeTab(this,'history-area-TL','lưu ý:(số đầu là: số tín chỉ, số thứ 2 là điểm trung bình tích lũy hệ 10, số cuối là điểm trung bình học kì hệ 4)')">Tích lũy</div>
+        </div>
+        <span id="luuY" class="text-danger">lưu ý:(số đầu là: số tín chỉ, số thứ 2 là điểm tổng kết, số cuối là thang điểm 4)</span>
+        <textarea name="" id="history-area" class="block" cols="60" rows="10" readonly></textarea>
+        <textarea name="" id="history-area-HK" cols="60" rows="10" readonly></textarea>
+        <textarea name="" id="history-area-TL" cols="60" rows="10" readonly></textarea>
+    </div>
+    <div class="bg-black d-flex justify-content-center align-items-center">
+        <span class="cl-white">Được thực hiện bởi: baoispro vêr 2</span>
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

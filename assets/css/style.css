@@ -1,0 +1,326 @@
+/* ==========================================================================
+   CSS Thuần Tối Ưu Giao Diện Công Cụ Tính Điểm IUH (Không đổi HTML)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8fafc;
+    color: #1e293b;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+/* Các Class Utility gốc của bạn */
+.cursor {
+    cursor: pointer;
+}
+
+.cl-white {
+    color: #ffffff !important;
+}
+
+.bg-black {
+    background-color: #0f172a !important;
+    padding: 18px 0;
+    margin-top: 50px;
+}
+
+.block {
+    display: block !important;
+}
+
+/* Ẩn mặc định theo logic JS */
+#TBHK, 
+#TBTL, 
+#btnAddColumn, 
+#btnAddColumnTL, 
+#history-area, 
+#history-area-HK, 
+#history-area-TL {
+    display: none;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0f172a !important;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+.navbar-brand img {
+    border: 2px solid #ffffff;
+}
+
+/* Tiêu đề trang */
+h1 {
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Select chọn phương thức tính */
+#select {
+    display: block;
+    margin: 1.5rem auto !important;
+    width: 90%;
+    max-width: 480px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    background-color: #ffffff;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    outline: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+/* Bọc Bảng & Cuộn ngang mượt mà trên mobile mà KHÔNG cần sửa HTML */
+.d-flex.justify-content-center.pt-5 {
+    padding-top: 10px !important;
+    max-width: 96%;
+    margin: 0 auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Định dạng Bảng */
+table {
+    border-collapse: separate !important;
+    border-spacing: 0;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    min-width: 650px;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 10px 6px !important;
+    border: 1px solid #e2e8f0 !important;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+td {
+    border: 1px solid #e2e8f0 !important;
+    padding: 3px !important;
+    vertical-align: middle;
+    background-color: #ffffff;
+}
+
+/* Ô Nhập Điểm */
+input {
+    border: 1px solid transparent !important;
+    background-color: transparent;
+    padding: 6px 2px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #0f172a;
+    width: 100%;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+input:focus, 
+input:focus-visible {
+    outline: none !important;
+    background-color: #eff6ff !important;
+    border: 1px solid #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Nút Thao Tác (Tính điểm, Xóa trắng, Thêm cột) */
+.d-flex.justify-content-center.pt-3 button {
+    border: none;
+    padding: 10px 22px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Nút Tính Điểm */
+.d-flex.justify-content-center.pt-3 button:first-child {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.d-flex.justify-content-center.pt-3 button:first-child:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25);
+}
+
+/* Nút Xóa Trắng */
+.d-flex.justify-content-center.pt-3 button:last-child {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.d-flex.justify-content-center.pt-3 button:last-child:hover {
+    background-color: #cbd5e1;
+    color: #1e293b;
+}
+
+/* Nút Thêm Cột (nút giữa ở HK & TL) */
+#btnAddColumn, 
+#btnAddColumnTL {
+    background-color: #10b981 !important;
+    color: #ffffff !important;
+}
+
+#btnAddColumn:hover, 
+#btnAddColumnTL:hover {
+    background-color: #059669 !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.25);
+}
+
+/* Khối Hộp Kết Quả */
+#result {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0 !important;
+    border-left: 5px solid #2563eb !important;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 2rem auto !important;
+    max-width: 800px;
+    width: 90%;
+    padding: 20px !important;
+}
+
+#result h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f1f5f9;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#result p {
+    margin-bottom: 10px;
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+/* Khối Lịch Sử Tra Cứu */
+#history-search {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin: 3rem auto 2rem auto !important;
+    max-width: 850px;
+    width: 90%;
+    padding: 24px !important;
+}
+
+#history-search h6 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 16px;
+    text-transform: capitalize;
+}
+
+/* Thanh Tab Lịch Sử */
+#tab {
+    background-color: #f1f5f9 !important;
+    padding: 4px;
+    border-radius: 8px;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.tab-btn {
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #64748b;
+    transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+    background-color: #e2e8f0 !important;
+    color: #0f172a;
+}
+
+.tab-btn.active, 
+.active {
+    background-color: #ffffff !important;
+    color: #2563eb !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#luuY {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #dc2626 !important;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Ô Textarea chứa lịch sử */
+textarea {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px;
+    padding: 12px;
+    font-family: monospace;
+    font-size: 0.9rem;
+    background-color: #f8fafc;
+    color: #334155;
+    width: 100%;
+    box-sizing: border-box;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #2563eb !important;
+    background-color: #ffffff;
+}
+
+/* Media Query cho Màn Hình Nhỏ */
+@media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+        margin-top: 1.5rem !important;
+    }
+    .w-75 {
+        width: 100% !important;
+    }
+    #result, 
+    #history-search {
+        margin: 1.5rem 1rem !important;
+        width: auto;
+        padding: 16px !important;
+    }
+    .d-flex.justify-content-center.pt-3 {
+        flex-wrap: wrap;
+        gap: 10px !important;
+    }
+}
